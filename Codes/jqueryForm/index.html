@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuryForm</title>
+    <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/fontawesome-free-6.2.1-web/fontawesome-free-6.2.1-web/css/all.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-success">Kamelot</h1>
+        <p id="text">Sign up</p>
+        <div class="col-lg-g m-auto d-block">
+            <form>
+                <div class="form-group">
+                    <label for="user">
+                        Username:
+                    </label>
+                    <input type="text" name="username" id="usernames" class="form-control">
+                    <h5 id="usercheck">
+                        **username is missing
+                    </h5>
+                </div>
+                <div class="form-group">
+                    <label for="user">
+                        Email
+                    </label>
+                    <input type="email" name="email" id="email" required class="form-control">
+                    <small id="email-valid" class="form-text" text-muted invalid-feedback>
+                        Your email must be a valid email
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">
+                        Password
+                    </label>
+                    <input type="password" name="pass" id="password" class="form-control">
+                    <h5 id="passcheck">
+                        **Please Fill the password
+                    </h5>
+                </div>
+
+                <div class="form-group">
+                    <label for="conpassword">
+                        Confirm Password
+                    </label>
+                    <input type="password" name="username" id="conpassword" class="form-control">
+                    <h5 id="conpasscheck">
+                        **Password didn't match
+                    </h5>
+                </div>
+                <input type="submit" id="submitbtn" value="submit" class="btn btn-primary">
+            </form>
+        </div>
+    </div>
+    <script src="/jquery-3.6.1.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
