@@ -64,10 +64,11 @@ form{
     z-index: 101;
     overflow: hidden;
     overflow-y: scroll;
+    width: 30%;
 }
 
 .btn-1 {
-    width:80px;
+    width:90px;
     height:40px;
     border:2px solid #fff;
     border-radius: 20px;
