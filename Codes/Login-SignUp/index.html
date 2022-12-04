@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Login & SignUp box</title>
+    <link rel="stylesheet" href="/Codes/fontawesome-free-6.2.1-web/fontawesome-free-6.2.1-web/css/all.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="demo"></h1>
+    <div class="buttons" id="buttons">
+        <button class="btn" onclick="login()">Login</button>
+        <button class="btn" onclick="sign()">Register</button>
+    </div>
+    <form id="login">
+        <i class="fa-solid fa-times" onclick="closelog()"></i>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button class="btn-1">Login</button>
+        <a href="#">Forget Password</a> 
+    </form>
+    <form id="register">
+        <i class="fa-solid fa-times" onclick="closereg()"></i>
+        <input type="text" placeholder="Username" id="username">
+        <input type="email" placeholder="Email" id="email" required>
+        <input type="password" placeholder="Password" id="password required">
+        <button class="btn-1">Register</button>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
