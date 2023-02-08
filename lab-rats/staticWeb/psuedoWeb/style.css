@@ -1,0 +1,596 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Spartan', sans-serif;
+}
+
+h1{
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+
+h2{
+    font-size: 40px;
+    line-height: 64px;
+    color: #222;
+}
+
+h4 {
+    font-size: 20px;
+    color: #222;
+}
+
+h6{
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p{
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;;
+}
+
+.section-p1 {
+    padding: 40px 80px;
+}
+
+.section-m1{
+    width: 40px 0;
+}
+
+button.normal{
+    color: black;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+body{
+    width: 100%;
+}
+
+/* header start */
+#header {
+    display: flex;  /*display items side by side */
+    align-items: center;
+    justify-content: space-between; /*to separate content */
+    padding: 20px 20px; /*20 pixel top and down, 80 pixels left and right */
+    background: #E3E6F3; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    /* readjust the box shadow of the nav bar */
+    z-index: 999;
+    /* makw the nav bar sticky so it wont move with the home page */
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+/* add the over effect on each navigation link */
+/* add a new active class to indicate an active page */
+#navbar li a:hover, 
+#navbar li a.active{
+    color: #088178;
+}
+
+/*pseudo classes after and before */
+#navbar li a.active::after,
+#navbar li a:hover::after{
+    content: ''; /* each time the after is used, content follows */
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+/*make the media content invisible */
+#mobile{
+    display: none;
+    align-items: center;
+}
+
+/* Home page */
+#hero{
+    background-image: url('/staticWeb/psuedoWeb/images/hero4.png');
+    height: 90vh; /* to make the image run accross the screen */
+    width: 100%;
+    /* align the image to the center */
+    background-position: top 25% right 0;
+    background-size: cover;
+    /* place the text in the center */
+    padding: 0 40px;
+    display: flex; /* by default display flex arrange items in row */
+    flex-direction: column;/* however flex direction convert it o column*/
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#hero h4{
+    /*add space below the h4 content */
+    padding-bottom: 15px;
+}
+
+#hero h1{
+    color: #088178;
+}
+
+#hero button {
+    background-image: url('/staticWeb/psuedoWeb/images/button.png');
+    background-color: transparent;
+    color: #088178;
+    border: 0;
+    /* add [adding to readjust the image background to fit the button */
+    padding: 14px 80px 14px 65px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+/* align all image in the feature section in one row */
+#feature{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#feature .fe-box{
+    width: 180px;
+    text-align: center;
+    padding: 25px 15px;
+    /* add a box shadow to box the image */
+    box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.03);
+    border: 1px solid #cce7d0; /* add border to make the box shadow obvious */
+    border-radius: 4px;
+    margin: 15px 0;
+}
+
+/* add a hover effect to reduce the box shadow each time the mouse hovers around the box */
+#feature .fe-box:hover{
+    box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.1);
+}
+
+/* make image responsive */
+#feature .fe-box img{
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+#feature .fe-box h6{
+    display: inline-block; /*  to make the padding align with the image */
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    color: #E3E6F3;
+    background-color: #bc4962;
+}
+
+#feature .fe-box:nth-child(2) h6{ /* the :nth-child picks item arithmetic progression */
+    background-color: #cdebbc;
+    color: #1a1a1a;
+}
+
+#feature .fe-box:nth-child(3) h6{
+    background-color: #1a1a1a;
+}
+#feature .fe-box:nth-child(4) h6{
+    background-color: #acc75d;
+}
+#feature .fe-box:nth-child(5) h6{
+    background-color: #2aa597;
+    color: #E3E6F3;
+}
+#feature .fe-box:nth-child(6) h6{
+    background-color: #f5f109ac;
+    color: #1a1a1a;
+}
+
+/* center the text */
+#product1{
+    text-align: center;
+}
+
+#product1 .pro{
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #c2d1c4;
+    border-radius: 10%;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px  rgba(0, 0, 0, 0.02);
+    margin: 15px 0;
+    position: relative;
+}
+
+/* add an hover effect */
+#product1 .pro:hover{
+    box-shadow: 20px 20px 30px  rgba(0, 0, 0, 0.5);
+    transition: 0.2s ease;
+}
+
+#product1 .pro img{
+    width: 100%;
+    border-radius: 10%;
+}
+
+/* style the text description */
+.pro-container .des{
+    text-align: start;
+    padding: 10px 0;
+}
+
+/* style the brand name */
+.pro-container .des span{
+    color: #060606;
+    font-size:  12px;
+}
+
+/* style the product name */
+.pro-container .des h5{
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+/* style the star */
+
+#product1 .pro .des i{
+    color: rgba(243, 181, 25);
+}
+
+#product1 .pro .des h4{
+    padding: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #088178;
+}
+
+#product1 .pro .fa-shopping-cart{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    color: rgb(79, 132, 79);
+    /* position the cart in the same row with price */
+    position: absolute;
+    bottom: 15px;
+    right: 10px;
+}
+
+#product1 .pro-container{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* align all items to the center */
+#banner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* align all text to the center */
+    align-items: center;
+    /* add a background image */
+    background-image: url('/staticWeb/psuedoWeb/images/banner/b2.jpg');
+    width: 100%;
+    /* increase the background image file */
+    height: 40vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#banner h4{
+    color: #928084;
+    font-weight: 600;
+}
+
+#banner h2{
+    color: #fff;
+    padding: 10px 0;
+}
+
+#banner h2 span{
+    color: #acc75d;
+}
+
+#banner button:hover{
+    background-color: #088178;
+    color: white;
+}
+
+#sm-banner{
+    /* display banner in one row */
+    display: flex;
+    flex-wrap: wrap;
+    /* add gap inbetween items */
+    gap: 12px;
+}
+
+/*style the sm-banner */
+#sm-banner .banner-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* align all text to the center */
+    align-items: center;
+    /* add a background image */
+    background-image: url('/staticWeb/psuedoWeb/images/banner/b17.jpg'); 
+    min-width: 560px;
+    /* increase the background image file */
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#sm-banner .banner-box1{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* align all text to the center */
+    align-items: center;
+    /* add a background image */
+    background-image: url('/staticWeb/psuedoWeb/images/banner/b18.jpg'); 
+    min-width: 560px;
+    /* increase the background image file */
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#sm-banner .banner-box2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* align all text to the center */
+    align-items: center;
+    /* add a background image */
+    background-image: url('/staticWeb/psuedoWeb/images/banner/b16.jpg'); 
+    min-width: 560px;
+    /* increase the background image file */
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#sm-banner .banner-box3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* align all text to the center */
+    align-items: center;
+    /* add a background image */
+    background-image: url('/staticWeb/psuedoWeb/images/banner/b10.jpg'); 
+    min-width: 560px;
+    /* increase the background image file */
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#sm-banner .banner-box4{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* align all text to the center */
+    align-items: center;
+    /* add a background image */
+    background-image: url('/staticWeb/psuedoWeb/images/banner/b4.jpg'); 
+    min-width: 560px;
+    /* increase the background image file */
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#sm-banner .banner-box5{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center; /* align all text to the center */
+    align-items: center;
+    /* add a background image */
+    background-image: url('/staticWeb/psuedoWeb/images/banner/b7.jpg'); 
+    min-width: 560px;
+    /* increase the background image file */
+    height: 50vh;
+    background-size: cover;
+    background-position: center;
+}
+
+#sm-banner button:hover{
+    background-color: #be0a0a;
+    color: #ffffff;
+}
+
+#sm-banner span{
+    color: #ffffff;
+}
+
+#sm-banner h4{
+    color: #ffffff;
+}
+
+#sm-banner h2 {
+    color: #ffffff;
+}
+
+#newsletter{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    background-image: url("/staticWeb/psuedoWeb/images/banner/b14.png");
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    background-color: #041e04;
+    margin: 20px 0;
+}
+
+#newsletter h4{
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+}
+
+#newsletter p{
+    font-size: 14px;
+    font-weight: 600;
+    color: #818ea0;
+}
+
+#newsletter p span{
+    color: #ffbd27;
+}
+
+#newsletter input{
+    height: 35px;
+    width: 270px;
+}
+
+#newsletter button{
+    padding: 8.5px 20px;
+    background-color: #088178;
+    cursor: pointer;
+}
+
+#newsletter button:hover{
+    background-color: #060606;
+    color: #fff;
+}
+
+#footer{
+    /* arrange all columns in one row */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+#footer .logo{
+    margin-bottom: 30px;
+}
+
+#footer h4{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+#footer p{
+    font-size: 13px;
+    margin: 0 0 8px 0;
+}
+
+#footer a{
+    font-size: 13px;
+    text-decoration: none;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+#footer .follow{
+    margin-top: 20px;
+}
+
+#footer .follow i{
+    color: #465b52;
+    padding-right: 4px;
+    cursor: pointer;
+}
+
+#footer .install .row img{
+    border: 1px solid #088178;
+    border-radius: 6px;
+}
+
+/* add space to the top and bottom of the images */
+#footer .install img {
+    margin: 10px 0 15px 0;
+}
+
+#footer .follow i:hover, 
+#footer a:hover{
+    color:#088178
+}
+
+/* align the copyright to the center */
+footer .copyright{
+    width: 100%;
+    text-align: center;
+}
+
+/* Start Media Query */
+@media (max-width: 799px) {
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px; /*hide the side navbar menu */
+        height: 100vh;
+        width: 300px;
+        background-color: #E3E6F3;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.01);
+        padding: 80px 0 0 10px;
+    }
+
+    #navbar.active{
+        right: 0px; /* show the side navbar menu when clicked*/
+    }
+
+    #navbar li{
+        margin-bottom: 25px;
+    }
+
+    /*make the side bar menu visible for smaller device*/
+    #mobile{
+        display: flex;
+        align-items: center;
+    }
+
+    #mobile i{
+        color: #1a1a1a;
+        font-size: 24px;
+        padding-left: 20px;
+    }
+}
